@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    ul.list-group
+        each workshop, i in workshops
+            li.list-group-item
+                a(href="/sidebar")=workshop.subject
+    br
+    h1 seminars
+    ul.list-group
+        each seminar, i in seminars
+            li.list-group-item
+                a(href="/sidebar")=seminar.subject
+    br
+    h1 exams conducted
+    ul.list-group
+        each exam, i in exams
+            li.list-group-item
+                a(href="/sidebar")=exam.subject
+    br
+    h1 iv
+    ul.list-group
+        each iv, i in ivs
+            li.list-group-item
+                a(href="/sidebar")=iv.subject
+    br
+    h1 conference
+    ul.list-group
+        each conference, i in conferences
+            li.list-group-item
+                a(href="/sidebar")=conference.subject

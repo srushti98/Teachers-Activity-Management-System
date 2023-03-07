@@ -1,0 +1,17 @@
+extends layout
+block content
+    h1 #{title}
+    form(method='POST',enctype='multipart/form-data',action='/articles/add')
+        #form-group1
+            label Title:
+            input.form-control(name='title',type='text')
+        #form-group2
+            label Author:
+            input.form-control(name='author',type='text')
+        #form-group3
+            label Body:
+            textarea.form-control(name='body')
+        #form-group4
+            label file:
+            input.form-control(name='file',type='file')
+        input.btn.btn-primary(type='submit',value='Submit')

@@ -1,0 +1,81 @@
+doctype html
+html
+    head
+        title option selection
+        |
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css', integrity='sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B', crossorigin='anonymous')
+        |
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js', integrity='sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em', crossorigin='anonymous')
+    body
+        .col-md-2
+        .col-md-12
+            nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.f1(style='margin-top: 10px')
+                a.navbar-brand(href='#') WELCOME
+                |
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                |
+                #navbarNav.collapse.navbar-collapse
+                    ul.navbar-nav
+                        li.nav-item.active
+                            a.nav-link(href='home.html')
+                                | Home
+                                span.sr-only (current)
+                |
+                div
+                    ul.navbar-nav(style='margin-right: 100px')
+                        li.nav-item
+                            a.nav-link(href='') Logout
+        // <iframe src="frame1.html" height="100%" frameborder="0px" >
+        div(style='margin-top: 30px;margin-left: 50px')
+            h5(style='color: red') * you can query by clicking on specific category *
+        .row(style='margin-left: 50px')
+            .card.text-center(style='width: 18rem;margin-top: 30px;margin-left: 50px')
+                .card-body
+                    h5.card-title Query by Users(ALL or some teachers)
+                    |
+                    p.card-text Query by name,or all
+                    |
+                    a.btn.btn-primary(href='/expo/search/user') GO
+            |
+            .card.text-center(style='width: 18rem;margin-top: 20px;margin-left: 50px')
+                .card-body
+                    h5.card-title Query by workshops
+                    |
+                    p.card-text Query by subject/date
+                    |
+                    a.btn.btn-primary(href='/expo/search/work') GO
+            |
+            .card.text-center(style='width: 18rem;margin-top: 20px;margin-left: 50px')
+                .card-body
+                    h5.card-title Query by Seminars
+                    |
+                    p.card-text Query by subject/date
+                    |
+                    a.btn.btn-primary(href='/expo/search/seminar') Go
+        .row(style='margin-left: 50px;margin-top: 30px')
+            .card.text-center(style='width: 18rem;margin-top: 20px;margin-left: 50px')
+                .card-body
+                    h5.card-title Query by Guest Lectures
+                    |
+                    p.card-text Query by subject/date
+                    |
+                    a.btn.btn-primary(href='/expo/search/guest') Go
+            |
+            .card.text-center(style='width: 18rem;margin-top: 20px;margin-left: 50px')
+                .card-body
+                    h5.card-title Query by Exams
+                    |
+                    p.card-text Query by subject/date
+                    |
+                    a.btn.btn-primary(href='/expo/search/exams') Go
+            |
+            .card.text-center(style='width: 18rem;margin-top: 20px;margin-left: 50px')
+                .card-body
+                    h5.card-title Query by conferences
+                    |
+                    p.card-text Query by subject/date
+                    |
+                    a.btn.btn-primary(href='/expo/search/conference') Go
+        |
+        .col-md-1

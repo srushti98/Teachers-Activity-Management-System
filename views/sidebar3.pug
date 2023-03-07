@@ -1,0 +1,231 @@
+doctype html
+head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    // jQuery library
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    // Latest compiled JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            height: 150px;
+            margin: auto;
+            vertical-align: middle;
+            text-align: center;
+            font-family: arial;
+        }
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+        button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: blue;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+        button:hover, a:hover {
+            opacity: 0.7;
+            color: blue;
+        }
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: blue;
+            margin-top: 10px;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: blue;
+        }
+        .topnav a.active {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        /* Fixed sidenav, full height */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: lightgrey;
+            overflow-x: hidden;
+            padding-top: 20px;
+            border: 2px black;
+        }
+        .dropdown-btn{
+            color: #111111;
+        }
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a, .dropdown-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+        /* On mouse-over */
+        .sidenav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 20px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: darkgrey;
+            color: white;
+        }
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: lightslategrey;
+            padding-left: 8px;
+        }
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+        .new{
+            float: right;
+            border: none;
+        }
+        /* Some media queries for responsiveness */
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+.topnav
+    a(href='#news') WELCOME
+    a.active(href='/sidebar2') Home
+    .new
+        a(href='#') logout
+.sidenav(style='margin-top: 62px')
+    h3(style='color: black;margin-left: 10px')
+        u Fill forms
+    a(href='/conference/conferenceform') conferences
+    a(href='/industryvisit/industryvisitform') IVs
+    a(href='/exam/examform') Exams
+    button.dropdown-btn
+        | workshops
+        i.fa.fa-caret-down
+    .dropdown-container
+        a(href='/workshop/workshopconform') conducted
+        a(href='/workshop/workshopattform') attended
+    button.dropdown-btn
+        | seminars
+        i.fa.fa-caret-down
+    .dropdown-container
+        a(href='/seminar/seminarformcon') conducted
+        a(href='/seminar/seminarformatt') attended
+    button.dropdown-btn
+        | guest lectures
+        i.fa.fa-caret-down
+    .dropdown-container
+        a(href='/guest/guestconform') conducted
+        a(href='/guest/guestattform') attended
+    a(href='#') others
+.main
+    h2(style='color: blue;margin-top: 80px;margin-left: 80px') DASHBOARD
+    h4(style='color: black;margin-top: 10px;margin-left: 80px') *View details submitted by you*
+    .row(style='margin-left: 30px')
+        .col-md-4
+            .card(style='margin-left: 20px;text-align: center')
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px;color: blue") WORKSHOPS
+                    a(href='/workshop/viewdetailsatt') *attended
+                    p
+                        a(href='/workshop/viewdetailscon', style='margin-top: 20px') *conducted
+        .col-md-4(style='margin-left: 50px')
+            .card
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px;color: blue") SEMINARS
+                    a(href='/seminar/viewdetailsatt') *attended
+                    p
+                        a(href='/seminar/viewdetailscon', style='margin-top: 20px') *conducted
+    .row(style='margin-left: 30px')
+        .col-md-4
+            .card(style='margin-left: 20px')
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px")
+                        a(href='/exam/viewdetails', style='color: blue;vertical-align: middle') EXAMS
+        .col-md-4(style='margin-left: 50px')
+            .card
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px")
+                        a(href='/conference/viewdetails', style='color: blue;vertical-align: middle') CONFERENCES
+    .row(style='margin-left: 30px')
+        .col-md-4
+            .card(style='margin-left: 20px')
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px")
+                        a(href='/industryvisit/viewdetails', style='color: blue;vertical-align: middle') I.V's
+                    p
+        .col-md-4(style='margin-left: 50px')
+            .card(style='vertical-align: auto')
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px;color: blue") GUEST LECTURES
+                    a(href='/guest/viewdetailsatt') *attended
+                    p
+                        a(href='/guest/viewdetailscon', style='margin-top: 20px') *conducted
+    .row(style='margin-left: 30px')
+        .col-md-4
+            .card(style='margin-left: 20px')
+                div
+                    h3(style="font-family: 'Comic Sans MS';margin-top: 30px")
+                        a(href='#', style='color: blue;vertical-align: middle') OTHERS
+                    p
+script.
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }

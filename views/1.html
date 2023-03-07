@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" >
+    <!--link(rel='stylesheet', href='/stylesheets/style.css')-->
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        * {
+            box-sizing: padding-box
+        }
+
+        /* Set height of body and the document to 100% */
+
+        body,
+        html {
+            height: 120%;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Style tab links */
+
+        .tablink {
+            background-color: #555;
+            color: black;
+            top-margin: 200px;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 50%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+
+        .tabcontent {
+            color: black;
+            display: none;
+            padding: 100px 20px;
+            height: 120%;
+        }
+
+        #Conducted {
+            background-color: skyblue;
+        }
+
+        #Attended {
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body><button class="tablink" onclick="openPage('Conducted', this, 'skyblue')">Conducted</button><button class="tablink" id="defaultOpen" onclick="openPage('Attended', this, 'coral')">Attended</button>
+<div class="tabcontent" id="Conducted">
+    <WorkshopForm></WorkshopForm>
+    <form method="POST" enctype="multipart/form-data" action="/workshop/workshopconform">
+        <div id="form-group20"><label>Organized by:</label><input class="form-control" name="organizer" type="text" /></div>
+        <div id="form-group19"><label>Date:</label><input class="form-control" name="date" type="date" max="undefined-undefined-undefined" /></div>
+        <div id="form-group18"><label>Number of days seminar was attended:</label><input class="form-control" name="day" type="number" /></div>
+        <div id="form-group17"><label>Subject:</label><textarea class="form-control" name="subject" type="text"></textarea></div>
+        <div id="form-group16"><label>Number of count:</label><input class="form-control" name="count" type="number" /><br/><label>Select list:</label></div>
+        <div id="form-group15"><select name="s1" size="1" multiple=""><option value="f">FIRST YEAR</option><option value="s">SECOND YEAR</option><option value="t">THIRD YEAR</option><option value="b">FOURTH YEAR</option></select><br/><label>Category:</label></div>
+        <div id="form-group14"><label class="radio-inline"><input type="radio" name="r2" value="1"/>internatioal</label><label class="radio-inline"><input type="radio" name="r2" value="2"/>National</label><label class="radio-inline"><input type="radio" name="r2" value="3"/>State</label>
+            <label
+                    class="radio-inline"><input type="radio" name="r2" value="4" />University</label><label class="radio-inline"><input type="radio" name="r2" value="5"/>Local/College level</label></div>
+        <div id="form-group13"><label>PO:</label><input class="form-control" name="po" type="text" /></div>
+        <div id="form-group12"><label>PSO:</label><input class="form-control" name="pso" type="text" /></div>
+        <div id="form-group11"><label>Venue:</label><textarea class="form-control" name="place" type="text"></textarea></div>
+        <div id="form-group81"><label>file:</label><input class="form-control" name="file" type="file" /></div><br/><input class="btn btn-primary" type="submit" value="Submit" /></form>
+</div>
+<div class="tabcontent" id="Attended">
+    <WorkshopForm></WorkshopForm>
+    <form method="POST" enctype="multipart/form-data" action="/workshop/workshopattform">
+        <div id="form-group9"><label>Organized by:</label><input class="form-control" name="organizer" type="text" /></div>
+        <div id="form-group8"><label>Date:</label><input class="form-control" name="date" type="date" max="undefined-undefined-undefined" /></div>
+        <div id="form-group7"><label>Number of days workshop was attended:</label><input class="form-control" name="day" type="number" /></div>
+        <div id="form-group5"><label>Subject:</label><textarea class="form-control" name="subject" type="text"></textarea><br/><label>Category:</label></div>
+        <div id="form-group4"><label class="radio-inline"><input type="radio" name="r2" value="1"/>internatioal</label><label class="radio-inline"><input type="radio" name="r2" value="2"/>National</label><label class="radio-inline"><input type="radio" name="r2" value="3"/>State</label>
+            <label
+                    class="radio-inline"><input type="radio" name="r2" value="4" />University</label><label class="radio-inline"><input type="radio" name="r2" value="5"/>Local/College level</label></div>
+        <div id="form-group6"><label>PO:</label><input class="form-control" name="po" type="text" /></div>
+        <div id="form-group3"><label>PSO:</label><input class="form-control" name="pso" type="text" /></div>
+        <div id="form-group2"><label>Venue:</label><textarea class="form-control" name="place" type="text"></textarea></div>
+        <div id="form-group80"><label>file:</label><input class="form-control" name="file" type="file" /></div><br/><input class="btn btn-primary" type="submit" value="Submit" /></form>
+</div>
+<script>
+    function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+
+</html>

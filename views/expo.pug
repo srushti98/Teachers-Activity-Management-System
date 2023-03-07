@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1 Search
+    form(method='POST',action='/expo/search')
+        div.form-group
+            input.form-control(name='activity',type='checkbox',value=1)
+            | Workshop
+            br
+            input.form-control(name='activity',type='checkbox',value=2)
+            | Seminar
+            br
+            input.form-control(name="activity",type='checkbox',value=3)
+            | Exam
+            br
+            input.form-control(name="activity",type='checkbox',value=4)
+            | Guest
+            br
+            input.form-control(name="activity",type='checkbox',value=5)
+            | Conference
+            br
+            input.form-control(name="activity",type='checkbox',value=6)
+            | Industrial Visit
+            br
+        input.btn.btn-primary(type='submit',value='Submit')

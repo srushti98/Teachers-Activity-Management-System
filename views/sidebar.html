@@ -1,0 +1,5 @@
+ul.list-group
+each workshop, i in workshops
+if(workshop.attendee == writer)
+li.list-group-item
+a(href="/workshop/aa/"+ workshop._id)=workshop.organizer

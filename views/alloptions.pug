@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Search
+    form(method='POST',action='/expo/search/alloptions')
+        div.form-group
+            label Select start date:
+            input.form-control(name='startdate',type='date')
+            br
+            label Select End DATE:
+            input.form-control(name='enddate',type='date')
+            br
+
+        input.btn.btn-primary(type='submit',value='Submit')

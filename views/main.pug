@@ -1,0 +1,90 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Login page
+        meta(name='viewport', content='width=device-width,initial-state=1')
+        link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css')
+        link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B", crossorigin="anonymous")
+        script(src='bootstrap/js/bootstrap.js')
+        style.
+            .bg{
+                background-size: cover;
+            }
+            #log{
+                border: 2px solid white;
+                padding: 50px 40px;
+                color:white;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                border-radius: 10px;
+                background: white;
+                box-shadow: #b21f2d;
+
+            }
+            body{
+                background: #00B7FF;
+            }
+            h1{
+
+                text-shadow: 2px 2px #00b3ee;
+                text-align: center;
+                font-size: 30px;
+                color: #005cbf;
+            }
+            h2 {
+                text-align: center;
+                font-size: 23px;
+                color: #ffffff;
+            }
+            label{
+                font-size: 20px;
+                color: #005cbf;
+            }
+            button{
+                margin-left: 150px;
+                margin-top: 25px;
+            }
+            a:hover {
+                text-decoration-color: #005cbf;
+                text-decoration: underline;
+            }
+            a{
+                float: right;
+                color: red;
+                text-decoration-color: black;
+                font-size: 15px;
+            }
+            img{
+                height: 150px;
+                margin-left: 125px;
+            }
+    body
+        .container-fluid.bg
+            .row
+                .col-md-4.col-sm-4.col-xs-12
+                .col-md-4.col-sm-4.col-xs-12
+                    form#log(method='POST',action='/users/login')
+                        != messages('message', locals)
+                        if errors
+                            each error, i in errors
+                                div(class="alert alert-danger") #{error.msg}
+                        //
+                          <img src="bootstrap/css/images/PICT-Logo.jpg" alt="PICT-LOGO" class="rounded-circle" style="margin-left: 150px">
+                        h1 Activity Management
+                        h2 User Login
+                        .form-group
+                            label User-name
+                            input.form-control(type='text', name='username', placeholder='Registration-id')
+                        .form-group
+                            label Password
+                            input.form-control(type='password', name='password', placeholder='Password')
+                        .row
+                            a(href='/sysadmin/login') Admin Login
+                            .col
+                                a(href='/users/register') New User?
+                        button.btn-primary.btn-lg(type='submit')
+                            i.fas.fa-sign-in-alt
+                            | Login
+                        // - <button type="submit" class="btn-lg">Login</button>
+                .col-md-4.col-sm-4.col-xs-12

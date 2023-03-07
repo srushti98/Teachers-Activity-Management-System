@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    h1 Search
+    form(method='POST',action='/expo/search/user')
+        .form-group
+            label username:
+            select.form-control(name='category')
+                if users
+                    each abcd, i in users
+                        option(value = abcd.name)=abcd.name
+        div.form-group
+            label Select username:
+            input.form-control(name='username',type='text')
+            br
+        div.form-group
+           input.form-control(name='submit1',type='submit',value='workshop' formaction="/expo/search/user/ww")
+           | Workshop
+           br
+           input.form-control(name='btn2',type='button',value='seminar' formaction="/expo/search/user/sem")
+           | Seminar
+           br
+           input.form-control(name="btn3",type='button',value='exam' formaction="/expo/search/user/ex")
+           | Exam
+           br
+           input.form-control(name="btn4",type='button',value='guest' formaction="/expo/search/user/guest")
+           | Guest
+           br
+           input.form-control(name="btn5",type='button',value='conference' formaction="/expo/search/user/conf")
+           | Conference
+           br
+           input.form-control(name="btn6",type='button',value='iv' formaction="/expo/search/user/iv")
+           | Industrial Visit
+           br
+        div.form-group
+            label Choose option for result:
+            input.form-control(name='viewdownload',type='radio',value=1)
+            | View
+            br
+            input.form-control(name='viewdownload',type='radio',value=2)
+            | Download
+            br
+        input.btn.btn-primary(type='submit',value='Submit')

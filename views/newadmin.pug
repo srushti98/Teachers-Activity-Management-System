@@ -1,0 +1,67 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Form
+    meta(name='viewport' content='width=device-width,initial-state=1')
+    link(rel='stylesheet' href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='js/bootstrap.js')
+    style.
+        body{
+            background-size: cover;
+            height: 700px;
+        }
+        .row{
+            margin-top: 50px;
+        }
+        .card{
+            margin-left: 10px;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        iframe{
+            width: 100%;
+            height: 700px;
+            margin-left: 70px;
+            margin-right: 10px;
+            border: none;
+        }
+.container-fluid
+    .row
+        .col-2.no-gutters
+            a(href='/expo/search/work' target='form_display')
+                #card1.card.text-white.bg-primary.mb-3(style='max-width: 300px')
+                    .card-header Part 1
+                    .card-body
+                        h5.card-title Woekshop Details
+                        p.card-text Fill out your personal details like address,blood group,etc
+            a(href='/expo/search/seminar' target='form_display')
+                #card2.card.text-white.bg-success.mb-3(style='max-width: 300px')
+                    .card-header Part 3
+                    .card-body
+                        h5.card-title Seminar Details
+                        p.card-text Fill out parents&apos; details ,name, education, occupation, etc.
+        .col-2.no-gutters
+            a(href='/expo/search/conference' target='form_display')
+                #card3.card.text-white.bg-danger.mb-3(style='max-width: 300px')
+                    .card-header Part 2
+                    .card-body
+                        h5.card-title Conference Details
+                        p.card-text Fill out academic details ,SSC details, HSC details, CET score, etc.
+            a(href='/expo/search/guest' target='form_display')
+                #card4.card.text-white.bg-warning.mb-3(style='max-width: 300px')
+                    .card-header Part 4
+                    .card-body
+                        h5.card-title Guest Lecture Details
+                        p.card-text About your hobbies, co-curricular activities, career plans, etc.
+        .col-2.no-gutters
+            a(href='/expo/search/exam' target='form_display')
+                #card5.card.text-white.bg-danger.mb-3(style='max-width: 300px')
+                    .card-header Part 5
+                    .card-body
+                        h5.card-title Certified Exam Details
+                        p.card-text Fill out academic details ,SSC details, HSC details, CET score, etc.
+        .col-6.no-gutters
+            iframe(name='form_display')
